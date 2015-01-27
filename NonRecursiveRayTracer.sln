@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonRecursiveRayTracer", "NonRecursiveRayTracer\NonRecursiveRayTracer.csproj", "{08543DEF-70C7-4C22-BC4A-93A4A14B28BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphics", "Graphics\Graphics.csproj", "{B1568C26-ADD4-472E-8C1A-C8A01E695FA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08543DEF-70C7-4C22-BC4A-93A4A14B28BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08543DEF-70C7-4C22-BC4A-93A4A14B28BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08543DEF-70C7-4C22-BC4A-93A4A14B28BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08543DEF-70C7-4C22-BC4A-93A4A14B28BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1568C26-ADD4-472E-8C1A-C8A01E695FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1568C26-ADD4-472E-8C1A-C8A01E695FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1568C26-ADD4-472E-8C1A-C8A01E695FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1568C26-ADD4-472E-8C1A-C8A01E695FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
