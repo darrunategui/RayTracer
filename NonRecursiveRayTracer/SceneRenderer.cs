@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
+using System.Threading.Tasks;
 
 namespace NonRecursiveRayTracer
 {
@@ -92,104 +93,104 @@ namespace NonRecursiveRayTracer
             f: 13));
 
          // Left eye
-         m.M11 = 2; m.M22 = 2; m.M33 = 2;
-         m.OffsetX = 26;
-         m.OffsetY = -2;
-         m.OffsetZ = 11;
-         _objects.Add(new Sphere(m: m,
-            c: Color.FromRgb(0, 10, 0),
-            sCol: Color.FromRgb(255, 255, 255),
-            dCol: Colors.Wheat,
-            aCol: Colors.Wheat,
-            sCoef: 0.3,
-            dCoef: 0.35,
-            aCoef: 0.35,
-            f: 13));
-         // Left pupil
-         m.M11 = 0.3; m.M22 = 0.3; m.M33 = 0.3;
-         m.OffsetX = 27.8;
-         m.OffsetY = -1.5;
-         m.OffsetZ = 11.5;
-         _objects.Add(new Sphere(m: m,
-            c: Color.FromRgb(0, 10, 0),
-            sCol: Color.FromRgb(255, 255, 255),
-            dCol: Colors.Black,
-            aCol: Colors.Black,
-            sCoef: 0.1,
-            dCoef: 0.45,
-            aCoef: 0.45,
-            f: 13));
+         //m.M11 = 2; m.M22 = 2; m.M33 = 2;
+         //m.OffsetX = 26;
+         //m.OffsetY = -2;
+         //m.OffsetZ = 11;
+         //_objects.Add(new Sphere(m: m,
+         //   c: Color.FromRgb(0, 10, 0),
+         //   sCol: Color.FromRgb(255, 255, 255),
+         //   dCol: Colors.Wheat,
+         //   aCol: Colors.Wheat,
+         //   sCoef: 0.3,
+         //   dCoef: 0.35,
+         //   aCoef: 0.35,
+         //   f: 13));
+         //// Left pupil
+         //m.M11 = 0.3; m.M22 = 0.3; m.M33 = 0.3;
+         //m.OffsetX = 27.8;
+         //m.OffsetY = -1.5;
+         //m.OffsetZ = 11.5;
+         //_objects.Add(new Sphere(m: m,
+         //   c: Color.FromRgb(0, 10, 0),
+         //   sCol: Color.FromRgb(255, 255, 255),
+         //   dCol: Colors.Black,
+         //   aCol: Colors.Black,
+         //   sCoef: 0.1,
+         //   dCoef: 0.45,
+         //   aCoef: 0.45,
+         //   f: 13));
 
-         // Right eye
-         m.M11 = 2; m.M22 = 2; m.M33 = 2;
-         m.OffsetX = 26;
-         m.OffsetY = 2;
-         m.OffsetZ = 11;
-         _objects.Add(new Sphere(m: m,
-            c: Color.FromRgb(0, 10, 0),
-            sCol: Color.FromRgb(255, 255, 255),
-            dCol: Colors.Wheat,
-            aCol: Colors.Wheat,
-            sCoef: 0.3,
-            dCoef: 0.35,
-            aCoef: 0.35,
-            f: 13));
-         // Right pupil
-         m.M11 = 0.3; m.M22 = 0.3; m.M33 = 0.3;
-         m.OffsetX = 27.8;
-         m.OffsetY = 2.8;
-         m.OffsetZ = 11.5;
-         _objects.Add(new Sphere(m: m,
-            c: Color.FromRgb(0, 10, 0),
-            sCol: Color.FromRgb(255, 255, 255),
-            dCol: Colors.Black,
-            aCol: Colors.Black,
-            sCoef: 0.1,
-            dCoef: 0.45,
-            aCoef: 0.45,
-            f: 13));
+         //// Right eye
+         //m.M11 = 2; m.M22 = 2; m.M33 = 2;
+         //m.OffsetX = 26;
+         //m.OffsetY = 2;
+         //m.OffsetZ = 11;
+         //_objects.Add(new Sphere(m: m,
+         //   c: Color.FromRgb(0, 10, 0),
+         //   sCol: Color.FromRgb(255, 255, 255),
+         //   dCol: Colors.Wheat,
+         //   aCol: Colors.Wheat,
+         //   sCoef: 0.3,
+         //   dCoef: 0.35,
+         //   aCoef: 0.35,
+         //   f: 13));
+         //// Right pupil
+         //m.M11 = 0.3; m.M22 = 0.3; m.M33 = 0.3;
+         //m.OffsetX = 27.8;
+         //m.OffsetY = 2.8;
+         //m.OffsetZ = 11.5;
+         //_objects.Add(new Sphere(m: m,
+         //   c: Color.FromRgb(0, 10, 0),
+         //   sCol: Color.FromRgb(255, 255, 255),
+         //   dCol: Colors.Black,
+         //   aCol: Colors.Black,
+         //   sCoef: 0.1,
+         //   dCoef: 0.45,
+         //   aCoef: 0.45,
+         //   f: 13));
 
-         // Mouth
-         m.M11 = 1; m.M22 = 1; m.M33 = 3;
-         m.OffsetX = 27;
-         m.OffsetY = 6;
-         m.OffsetZ = 0;
-         _objects.Add(new Cylinder(m: m*Extensions.XAxisRotationMatrix(Math.PI/2.0),
-            c: Color.FromRgb(0, 10, 0),
-            sCol: Color.FromRgb(255, 255, 255),
-            dCol: Colors.LightBlue,
-            aCol: Colors.LightBlue,
-            sCoef: 0.3,
-            dCoef: 0.35,
-            aCoef: 0.35,
-            f: 13));
-         // Mouth ends
-         m.M11 = 1; m.M22 = 1; m.M33 = 1;
-         m.OffsetX = 27;
-         m.OffsetY = 3;
-         m.OffsetZ = 6;
-         _objects.Add(new Sphere(m: m,
-            c: Color.FromRgb(0, 10, 0),
-            sCol: Color.FromRgb(255, 255, 255),
-            dCol: Colors.LightBlue,
-            aCol: Colors.LightBlue,
-            sCoef: 0.3,
-            dCoef: 0.35,
-            aCoef: 0.35,
-            f: 13));
-         m.M11 = 1; m.M22 = 1; m.M33 = 1;
-         m.OffsetX = 27;
-         m.OffsetY = -3;
-         m.OffsetZ = 6;
-         _objects.Add(new Sphere(m: m,
-            c: Color.FromRgb(0, 10, 0),
-            sCol: Color.FromRgb(255, 255, 255),
-            dCol: Colors.LightBlue,
-            aCol: Colors.LightBlue,
-            sCoef: 0.3,
-            dCoef: 0.35,
-            aCoef: 0.35,
-            f: 13));
+         //// Mouth
+         //m.M11 = 1; m.M22 = 1; m.M33 = 3;
+         //m.OffsetX = 27;
+         //m.OffsetY = 6;
+         //m.OffsetZ = 0;
+         //_objects.Add(new Cylinder(m: m*Extensions.XAxisRotationMatrix(Math.PI/2.0),
+         //   c: Color.FromRgb(0, 10, 0),
+         //   sCol: Color.FromRgb(255, 255, 255),
+         //   dCol: Colors.LightBlue,
+         //   aCol: Colors.LightBlue,
+         //   sCoef: 0.3,
+         //   dCoef: 0.35,
+         //   aCoef: 0.35,
+         //   f: 13));
+         //// Mouth ends
+         //m.M11 = 1; m.M22 = 1; m.M33 = 1;
+         //m.OffsetX = 27;
+         //m.OffsetY = 3;
+         //m.OffsetZ = 6;
+         //_objects.Add(new Sphere(m: m,
+         //   c: Color.FromRgb(0, 10, 0),
+         //   sCol: Color.FromRgb(255, 255, 255),
+         //   dCol: Colors.LightBlue,
+         //   aCol: Colors.LightBlue,
+         //   sCoef: 0.3,
+         //   dCoef: 0.35,
+         //   aCoef: 0.35,
+         //   f: 13));
+         //m.M11 = 1; m.M22 = 1; m.M33 = 1;
+         //m.OffsetX = 27;
+         //m.OffsetY = -3;
+         //m.OffsetZ = 6;
+         //_objects.Add(new Sphere(m: m,
+         //   c: Color.FromRgb(0, 10, 0),
+         //   sCol: Color.FromRgb(255, 255, 255),
+         //   dCol: Colors.LightBlue,
+         //   aCol: Colors.LightBlue,
+         //   sCoef: 0.3,
+         //   dCoef: 0.35,
+         //   aCoef: 0.35,
+         //   f: 13));
          #endregion
       }
 
@@ -199,7 +200,7 @@ namespace NonRecursiveRayTracer
       private void Form_Load(object sender, EventArgs e)
       {
          // Invalidate the pixel grid to render the scene
-         pixelGrid.Invalidate();
+         //pixelGrid.Invalidate();
       }
 
       /// <summary>
@@ -210,7 +211,7 @@ namespace NonRecursiveRayTracer
          // Initialize required objects
          SyntheticCamera c = new SyntheticCamera(_e, _g, _p, 15, 150, 45.0, 1.0, pixelGrid.Grid.Width, pixelGrid.Grid.Height);
          DrawingController drawer = new DrawingController(e.Graphics);
-         RayTracer ray = new RayTracer(c, 2);
+         RayTracer ray = new RayTracer(c, 1);
 
          int superWidth = pixelGrid.Grid.Width*ray.ResolutionMultiplier;
          int superHeight = pixelGrid.Grid.Height*ray.ResolutionMultiplier;
@@ -219,16 +220,15 @@ namespace NonRecursiveRayTracer
          Color[,] buffer = new Color[superHeight, superWidth];
 
          // Loop through each pixel and trace a ray through it to find an intersection with the object
-         for (int y = 0; y<superHeight; ++y)
-         {
-            for (int x = 0; x<superWidth; ++x)
-            {
-               Color color = ray.RayTrace(_objects, x, y, _light, _sun);
-
-               // save the color of the point in the buffer
-               buffer[y, x] = color;
-            }
-         }
+         Parallel.For(0, superHeight, (y) =>
+          {
+             Parallel.For(0, superWidth, (x) =>
+             {
+                PointLight pointLight = new PointLight(Color.FromScRgb(1, 1, 1, 1), new Point3D(1000, 1000, 1000));
+                DirectionalLight sun = new DirectionalLight(Color.FromScRgb(1, 1, 1, 1), new Vector3D(0, 0, -1));
+                buffer[y, x] = ray.RayTrace(_objects, x, y, pointLight, sun);
+             });
+          });
 
          // Calculates the avg's of the super resolution buffer and displys to screen.
          for (int i = 0; i < buffer.GetLength(0); i+=ray.ResolutionMultiplier)
